@@ -2,7 +2,9 @@
   "name": "gamemodstudios-modding-tools",
   "displayName": "Gamemodstudios Modding Tools",
   "description": "Tools and features for developing mods using the Gamemodstudios SDK, including IntelliSense, snippets, and utilities.",
+  "icon": "resources/icon.png",
   "version": "0.0.1",
+  "publisher": "Gamemodstudios",
   "engines": {
     "vscode": "^1.99.0"
   },
@@ -20,6 +22,42 @@
       {
         "command": "gamemodstudios-modding-tools.openModdingTools",
         "title": "Open Modding Tools"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "gamemodstudios-modding-tools",
+          "title": "Gamemodstudios Modding Tools",
+          "icon": "resources/icon.png"
+        }
+      ]
+    },
+    "views": {
+      "gamemodstudios-modding-tools": [
+        {
+          "id": "gamemodstudios-modding-tools.view",
+          "name": "Modding Tools",
+          "icon": "resources/icon.png"
+        }
+      ]
+    },
+    "jsonValidation": [
+      {
+        "fileMatch": ".gmsmod",
+        "url": "https://raw.githubusercontent.com/gamemodstudios/gamemodstudios/main/schemas/gmsmod.schema.json"
+      }
+    ],
+    "languages": [
+      {
+        "id": "gmsmod",
+        "aliases": ["GMS Mod"],
+        "extensions": [".gmsmod"],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "resources/file-icon-light.png",
+          "dark": "resources/file-icon-dark.png"
+        }
       }
     ]
   },
