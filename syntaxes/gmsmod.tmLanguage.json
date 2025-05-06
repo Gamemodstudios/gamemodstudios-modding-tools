@@ -1,0 +1,22 @@
+{
+  "scopeName": "source.gmsmod",
+  "patterns": [
+    {
+      "name": "keyword.control.gmsmod",
+      "match": "\\b(if|else|for|while|return)\\b"
+    },
+    {
+      "name": "string.quoted.double.gmsmod",
+      "begin": "\"",
+      "end": "\""
+    },
+    {
+      "name": "constant.key.gmsmod",
+      "match": "\"[a-zA-Z0-9_]+\"(?=\\s*:)"
+    }
+  ],
+  "repository": {},
+  "fileTypes": ["gmsmod"],
+  "name": "GMS Mod",
+  "uuid": "123e4567-e89b-12d3-a456-426614174000"
+}

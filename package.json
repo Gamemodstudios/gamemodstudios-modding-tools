@@ -22,10 +22,21 @@
       {
         "command": "gamemodstudios-modding-tools.openModdingTools",
         "title": "Open Modding Tools"
+      },
+      {
+        "command": "gamemodstudios-modding-tools.createNewMod",
+        "title": "Create New Mod"
       }
     ],
     "viewsContainers": {
       "activitybar": [
+        {
+          "id": "gamemodstudios-modding-tools",
+          "title": "Gamemodstudios Modding Tools",
+          "icon": "resources/icon.png"
+        }
+      ],
+      "panel": [
         {
           "id": "gamemodstudios-modding-tools",
           "title": "Gamemodstudios Modding Tools",
@@ -42,9 +53,20 @@
         }
       ]
     },
+    "viewsWelcome": [
+      {
+        "view": "gamemodstudios-modding-tools.view",
+        "contents": "Welcome to the Gamemodstudios Modding Tools! Use the command palette to access various tools and features.",
+        "when": "view == gamemodstudios-modding-tools.view"
+      }
+    ],
     "jsonValidation": [
       {
         "fileMatch": ".gmsmod",
+        "url": "https://raw.githubusercontent.com/gamemodstudios/gamemodstudios/main/schemas/gmsmod.schema.json"
+      },
+      {
+        "fileMatch": ["*.gmsmod"],
         "url": "https://raw.githubusercontent.com/gamemodstudios/gamemodstudios/main/schemas/gmsmod.schema.json"
       }
     ],
@@ -55,11 +77,36 @@
         "extensions": [".gmsmod"],
         "configuration": "./language-configuration.json",
         "icon": {
-          "light": "resources/file-icon-light.png",
-          "dark": "resources/file-icon-dark.png"
+          "light": "resources/gmsmod-file-icon.png",
+          "dark": "resources/gmsmod-file-icon.png"
         }
       }
-    ]
+    ],
+    "grammars": [
+      { 
+        "language": "gmsmod",
+        "scopeName": "source.gmsmod",
+        "path": "./syntaxes/gmsmod.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.cs": "csharp",
+          "meta.embedded.block.json": "json",
+          "source.gmsscript": "gmsscript",
+          "source.gmsmod": "gmsmod",
+          "source.gmsscript.embedded": "gmsscript"
+        }
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Gamemodstudios Modding Tools Configuration",
+      "properties": {
+        "gamemodstudios-modding-tools.someSetting": {
+          "type": "string",
+          "default": "",
+          "description": "An example setting for the Gamemodstudios Modding Tools."
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
