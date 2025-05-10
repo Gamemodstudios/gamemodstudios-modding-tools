@@ -5,6 +5,11 @@
   "icon": "resources/icon.png",
   "version": "0.0.1",
   "publisher": "Gamemodstudios",
+  "preview": true,
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/gamemodstudios/gamemodstudios-modding-tools"
+  },
   "engines": {
     "vscode": "^1.99.0"
   },
