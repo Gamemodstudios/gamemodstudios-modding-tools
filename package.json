@@ -6,6 +6,8 @@
   "version": "0.0.1",
   "publisher": "Gamemodstudios",
   "preview": true,
+  "license": "MIT",
+  "private": true,
   "repository": {
     "type": "github",
     "url": "https://github.com/gamemodstudios/gamemodstudios-modding-tools"
